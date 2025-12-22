@@ -24,15 +24,6 @@ const servicios = [
   }
 ];
 
-const beneficios = [
-  "Ahorro de tiempo automatizando tareas repetitivas.",
-  "Reducción de costos y reprocesos operativos.",
-  "Decisiones más rápidas con visión 360 de KPIs.",
-  "Mejor experiencia del cliente con respuestas inmediatas.",
-  "Escalabilidad sin crecer en costos fijos.",
-  "Mayor seguridad y control con trazabilidad completa."
-];
-
 const pasosMetodologia = [
   {
     title: "Diagnóstico / Demo",
@@ -130,12 +121,15 @@ export function HomePage() {
               QuAI Analytics impulsa tu negocio con IA, automatización y datos en tiempo real.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <button
-                onClick={() => scrollTo("contacto")}
-                className="rounded-full bg-quai-teal px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-quai-teal/40 hover:bg-quai-teal/90 transition-colors"
+              <a
+                href="https://wa.me/50768201544"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-green-700 transition-colors"
               >
-                Agenda una demo gratuita
-              </button>
+                <span>💬</span>
+                Agenda una reunión por WhatsApp
+              </a>
               <Link
                 to="/demo"
                 className="rounded-full border border-slate-700 bg-slate-950/50 px-6 py-3 text-sm font-semibold text-slate-50 hover:bg-slate-900 transition-colors"
@@ -145,41 +139,34 @@ export function HomePage() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <div className="aspect-square w-full max-w-md rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 shadow-2xl shadow-quai-teal/10 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="text-6xl">🚀</div>
-                <p className="text-slate-300 text-lg font-medium">Acelera tu transformación digital</p>
-              </div>
-            </div>
+            <img src="/image/image_2.png" alt="QuAI Analytics" className="w-full max-w-md rounded-2xl shadow-2xl" />
           </div>
         </div>
       </Section>
 
       {/* Quiénes somos */}
       <Section id="quienes-somos" title="Quiénes somos">
-        <p className="text-lg text-slate-300 leading-relaxed max-w-4xl mx-auto">
-          Somos un equipo de ingenieros, analistas y consultores especializados en inteligencia artificial, ciencia de
-          datos y automatización. Nuestra misión es llevar la transformación digital a empresas de cualquier sector,
-          convirtiendo procesos manuales en soluciones inteligentes y escalables que generan valor inmediato.
-        </p>
-      </Section>
-
-      {/* Misión y visión */}
-      <Section id="mision-vision" title="Misión y visión">
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-xl font-semibold text-quai-teal mb-3">🎯 Misión</h3>
-            <p className="text-slate-300 leading-relaxed">
-              Facilitar la transformación digital de empresas a través de soluciones prácticas de IA y automatización
-              que generen impacto real y medible desde el día uno.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-xl font-semibold text-quai-teal mb-3">🔭 Visión</h3>
-            <p className="text-slate-300 leading-relaxed">
-              Ser referentes en LATAM como aliados estratégicos para empresas que buscan escalar mediante tecnología,
-              datos e innovación continua.
-            </p>
+        <div className="space-y-8">
+          <p className="text-lg text-slate-300 leading-relaxed max-w-4xl mx-auto">
+            Somos un equipo de ingenieros, analistas y consultores especializados en inteligencia artificial, ciencia de
+            datos y automatización. Nuestra misión es llevar la transformación digital a empresas de cualquier sector,
+            convirtiendo procesos manuales en soluciones inteligentes y escalables que generan valor inmediato.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <h3 className="text-xl font-semibold text-quai-teal mb-3">🎯 Misión</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Facilitar la transformación digital de empresas a través de soluciones prácticas de IA y automatización
+                que generen impacto real y medible desde el día uno.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <h3 className="text-xl font-semibold text-quai-teal mb-3">🔭 Visión</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Ser referentes en LATAM como aliados estratégicos para empresas que buscan escalar mediante tecnología,
+                datos e innovación continua.
+              </p>
+            </div>
           </div>
         </div>
       </Section>
@@ -194,18 +181,6 @@ export function HomePage() {
             </div>
           ))}
         </div>
-      </Section>
-
-      {/* Beneficios */}
-      <Section id="beneficios" title="Beneficios">
-        <ul className="space-y-3 max-w-3xl mx-auto">
-          {beneficios.map((b, i) => (
-            <li key={i} className="flex items-start gap-3 text-slate-300">
-              <span className="text-quai-teal text-xl mt-0.5">✓</span>
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
       </Section>
 
       {/* Metodología */}
@@ -279,71 +254,58 @@ export function HomePage() {
         </div>
       </Section>
 
-      {/* Experiencia */}
+      {/* Experiencia y Contacto */}
       <Section id="experiencia" title="Experiencia">
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-4">🏢 Sectores</h3>
-            <div className="flex flex-wrap gap-2">
-              {sectores.map((s, i) => (
-                <span key={i} className="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">
-                  {s}
-                </span>
-              ))}
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <h3 className="text-lg font-semibold text-quai-teal mb-4">🏢 Sectores</h3>
+              <div className="flex flex-wrap gap-2">
+                {sectores.map((s, i) => (
+                  <span key={i} className="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <h3 className="text-lg font-semibold text-quai-teal mb-4">🛠️ Tecnologías</h3>
+              <div className="flex flex-wrap gap-2">
+                {tecnologias.map((t, i) => (
+                  <span key={i} className="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <h3 className="text-lg font-semibold text-quai-teal mb-4">🏆 Certificaciones</h3>
+              <div className="flex flex-wrap gap-2">
+                {certificaciones.map((c, i) => (
+                  <span key={i} className="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">
+                    {c}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-4">🛠️ Tecnologías</h3>
-            <div className="flex flex-wrap gap-2">
-              {tecnologias.map((t, i) => (
-                <span key={i} className="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-4">🏆 Certificaciones</h3>
-            <div className="flex flex-wrap gap-2">
-              {certificaciones.map((c, i) => (
-                <span key={i} className="px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
 
-      {/* Contacto */}
-      <Section id="contacto" title="Contacto">
-        <div className="max-w-4xl mx-auto space-y-8">
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-8">
             <h3 className="text-2xl font-semibold text-slate-50 mb-6">Nuestro Equipo</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <p className="text-lg font-semibold text-quai-teal">Ricardo Álvarez</p>
-                <p className="text-sm text-slate-400">CEO & Co-fundador</p>
-                <p className="text-sm text-slate-300">📧 ralvarez@quai-analytics.com</p>
+                <p className="text-sm text-slate-400">Data Scientist & Co-Founder</p>
+                <p className="text-sm text-slate-300">📧 ricardo.alvarez@quaianalytics.com</p>
+                <p className="text-sm text-slate-400">Experto en Ciencias de Datos y Gestión Estratégica</p>
               </div>
               <div className="space-y-2">
-                <p className="text-lg font-semibold text-quai-teal">Pablo López</p>
-                <p className="text-sm text-slate-400">CTO & Co-fundador</p>
-                <p className="text-sm text-slate-300">📧 plopez@quai-analytics.com</p>
+                <p className="text-lg font-semibold text-quai-teal">Alexander Cuadra</p>
+                <p className="text-sm text-slate-400">Data Engineer & Co-Founder</p>
+                <p className="text-sm text-slate-300">📧 alexander.cuadra@quaianalytics.com</p>
+                <p className="text-sm text-slate-400">Especialista en Analítica e Ingeniería de Datos.</p>
               </div>
             </div>
-          </div>
-
-          <div className="text-center">
-            <a
-              href="https://wa.me/50768373640"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-green-700 transition-colors"
-            >
-              <span>💬</span>
-              Agenda una reunión por WhatsApp
-            </a>
           </div>
         </div>
       </Section>

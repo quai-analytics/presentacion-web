@@ -1,18 +1,19 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { DemoPage } from "./pages/DemoPage";
+import { PropertyPriceDemoPage } from "./pages/PropertyPriceDemoPage";
+import { ChatDemoPage } from "./pages/ChatDemoPage";
+import { CalendarDemoPage } from "./pages/CalendarDemoPage";
+import { CustomerClusteringDemoPage } from "./pages/CustomerClusteringDemoPage";
 
 const navItems = [
   { id: "inicio", label: "Inicio" },
   { id: "quienes-somos", label: "Quiénes somos" },
-  { id: "mision-vision", label: "Misión y visión" },
   { id: "servicios", label: "Servicios" },
-  { id: "beneficios", label: "Beneficios" },
   { id: "metodologia", label: "Metodología" },
   { id: "entregas", label: "Entregas" },
   { id: "casos", label: "Casos" },
-  { id: "experiencia", label: "Experiencia" },
-  { id: "contacto", label: "Contacto" }
+  { id: "experiencia", label: "Experiencia" }
 ];
 
 function scrollTo(id: string) {
@@ -83,6 +84,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/demo" element={<DemoPage />} />
+          <Route path="/demo/property-price" element={<PropertyPriceDemoPage />} />
+          <Route path="/demo/chatbot" element={<ChatDemoPage />} />
+          <Route path="/demo/calendar-assistant" element={<CalendarDemoPage />} />
+          <Route path="/demo/customer-clustering" element={<CustomerClusteringDemoPage />} />
         </Routes>
       </div>
     </BrowserRouter>
