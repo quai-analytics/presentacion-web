@@ -42,7 +42,7 @@ export function CustomerClusteringDemoPage() {
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
             <h3 className="text-lg font-semibold text-quai-teal mb-3">🤖 Algoritmo K-Means</h3>
             <p className="text-slate-300 leading-relaxed">
-              Esta demo utiliza el algoritmo K-Means para segmentar clientes basándose en métricas RFM (Recencia, Frecuencia, Monetario).
+              Esta demo utiliza el algoritmo K-Means para segmentar clientes basándose en métricas RFM (Recurrencia, Frecuencia, Monetario).
               El análisis RFM es una técnica probada en marketing que identifica los clientes más valiosos y permite personalizar
               estrategias para cada segmento.
             </p>
@@ -75,19 +75,19 @@ export function CustomerClusteringDemoPage() {
             <div className="grid sm:grid-cols-2 gap-3">
               <div className="rounded-lg bg-slate-900/50 border border-slate-800 p-3">
                 <p className="text-sm text-slate-400 mb-1">Clientes Champions:</p>
-                <p className="text-xs text-slate-300">Baja recencia, alta frecuencia, alto monetario</p>
+                <p className="text-xs text-slate-300">Baja recurrencia, alta frecuencia, alto monetario</p>
               </div>
               <div className="rounded-lg bg-slate-900/50 border border-slate-800 p-3">
                 <p className="text-sm text-slate-400 mb-1">Clientes en Riesgo:</p>
-                <p className="text-xs text-slate-300">Alta recencia, baja frecuencia, variable monetario</p>
+                <p className="text-xs text-slate-300">Alta recurrencia, baja frecuencia, variable monetario</p>
               </div>
               <div className="rounded-lg bg-slate-900/50 border border-slate-800 p-3">
                 <p className="text-sm text-slate-400 mb-1">Clientes Potenciales:</p>
-                <p className="text-xs text-slate-300">Baja recencia, baja frecuencia, bajo monetario</p>
+                <p className="text-xs text-slate-300">Baja recurrencia, baja frecuencia, bajo monetario</p>
               </div>
               <div className="rounded-lg bg-slate-900/50 border border-slate-800 p-3">
                 <p className="text-sm text-slate-400 mb-1">Clientes Leales:</p>
-                <p className="text-xs text-slate-300">Variable recencia, alta frecuencia, variable monetario</p>
+                <p className="text-xs text-slate-300">Variable recurrencia, alta frecuencia, variable monetario</p>
               </div>
             </div>
           </div>
