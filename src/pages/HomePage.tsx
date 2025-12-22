@@ -139,7 +139,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <img src="/image/image_2.png" alt="QuAI Analytics" className="w-full max-w-md rounded-2xl shadow-2xl" />
+            <img src="/image_2.png" alt="QuAI Analytics" className="w-full max-w-md rounded-2xl shadow-2xl" />
           </div>
         </div>
       </Section>
