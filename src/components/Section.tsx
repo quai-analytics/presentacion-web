@@ -3,10 +3,11 @@ import { ReactNode } from "react";
 type SectionProps = {
   id: string;
   eyebrow?: string;
-  title: string;
+  title?: string;
   description?: string;
   children?: ReactNode;
   dark?: boolean;
+  className?: string;
 };
 
 export function Section({
@@ -15,14 +16,15 @@ export function Section({
   title,
   description,
   children,
-  dark
+  dark,
+  className
 }: SectionProps) {
   return (
     <section
       id={id}
       className={`py-20 ${
         dark ? "bg-quai-navy" : "bg-slate-950"
-      } border-b border-slate-800`}
+      } border-b border-slate-800 ${className || ""}`}
     >
       <div className="mx-auto max-w-6xl px-6">
         <header className="max-w-3xl">
@@ -31,9 +33,11 @@ export function Section({
               {eyebrow}
             </p>
           )}
-          <h2 className="text-3xl md:text-4xl font-semibold text-slate-50 mb-4">
-            {title}
-          </h2>
+          {title && (
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-50 mb-4">
+              {title}
+            </h2>
+          )}
           {description && (
             <p className="text-slate-300 leading-relaxed">{description}</p>
           )}
