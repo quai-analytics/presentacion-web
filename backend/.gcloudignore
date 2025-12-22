@@ -1,0 +1,10 @@
+# Archivos comunes a ignorar en despliegues de gcloud
+.git/
+.gitignore
+node_modules/
+.vscode/
+__pycache__/
+*.pyc
+.env
+.venv/
+.DS_Store

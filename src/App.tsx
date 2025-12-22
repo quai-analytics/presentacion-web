@@ -1,13 +1,18 @@
-import { useState } from "react";
 import { Section } from "./components/Section";
+import { PropertyPricePredictor } from "./components/PropertyPricePredictor";
 
 const navItems = [
   { id: "inicio", label: "Inicio" },
-  { id: "diagnostico", label: "Diagnóstico" },
-  { id: "roadmap", label: "Hoja de Ruta" },
-  { id: "porque-nosotros", label: "¿Por qué nosotros?" },
-  { id: "roi", label: "ROI & Inversión" },
-  { id: "proximos-pasos", label: "Próximos pasos" }
+  { id: "quienes-somos", label: "Quiénes somos" },
+  { id: "mision-vision", label: "Misión y visión" },
+  { id: "servicios", label: "Servicios" },
+  { id: "beneficios", label: "Beneficios" },
+  { id: "metodologia", label: "Metodología" },
+  { id: "entregas", label: "Entregas" },
+  { id: "casos", label: "Casos" },
+  { id: "experiencia", label: "Experiencia" },
+  { id: "demo", label: "Demo" },
+  { id: "contacto", label: "Contacto" }
 ];
 
 function scrollTo(id: string) {
@@ -15,33 +20,147 @@ function scrollTo(id: string) {
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+const servicios = [
+  {
+    title: "Consultoría estratégica",
+    desc: "Modelos de negocio digitales y gestión del cambio."
+  },
+  {
+    title: "Transformación digital",
+    desc: "Diagnóstico tecnológico y roadmap digital enfocado en valor."
+  },
+  {
+    title: "Automatización de procesos (RPA)",
+    desc: "Optimización operativa y reducción de errores repetitivos."
+  },
+  {
+    title: "Aplicación de IA",
+    desc: "Modelos predictivos, chatbots y NLP para decisiones rápidas."
+  },
+  {
+    title: "Integración de sistemas",
+    desc: "APIs, ERP y CRMs conectados con infraestructura en la nube."
+  }
+];
+
+const beneficios = [
+  "Ahorro de tiempo automatizando tareas repetitivas.",
+  "Reducción de costos y reprocesos operativos.",
+  "Decisiones más rápidas con visión 360 de KPIs.",
+  "Mejor experiencia del cliente con respuestas inmediatas.",
+  "Escalabilidad sin crecer en costos fijos.",
+  "Mayor seguridad y control con trazabilidad completa."
+];
+
+const pasosMetodologia = [
+  {
+    title: "Diagnóstico / Demo",
+    desc: "Mapeo y análisis de procesos actuales para identificar mejoras."
+  },
+  {
+    title: "Co-diseño de soluciones",
+    desc: "Diseño colaborativo de soluciones adaptadas al cliente."
+  },
+  {
+    title: "Desarrollo",
+    desc: "Configuración y despliegue de pruebas de concepto y MVP."
+  },
+  {
+    title: "Pruebas / Entrega",
+    desc: "Validación de resultados y ajustes para máxima performance."
+  },
+  {
+    title: "Escalamiento y soporte",
+    desc: "Ampliación progresiva y acompañamiento continuo."
+  }
+];
+
+const entregas = [
+  {
+    title: "Proyecto fijo",
+    desc: "Alcance definido y acordado desde el inicio."
+  },
+  {
+    title: "Consultoría",
+    desc: "Evaluación integral y propuesta conjunta de valor."
+  },
+  {
+    title: "Proyecto híbrido",
+    desc: "Alcance preliminar con iteraciones de mejora continua."
+  },
+  {
+    title: "Acompañamiento",
+    desc: "Soporte continuo, mantenimiento y capacitaciones."
+  }
+];
+
+const casos = [
+  {
+    sector: "Energía",
+    dolor: [
+      "Gestión ineficiente de clientes con poca clasificación.",
+      "Falta de visibilidad en métricas clave para decidir.",
+      "Contabilidad ingresada manualmente con errores y pérdida de tiempo."
+    ],
+    solucion: [
+      "Clasificación automática de clientes con bots inteligentes.",
+      "Dashboards personalizados para KPIs en tiempo real.",
+      "Automatización contable e integración con sistemas existentes."
+    ],
+    impacto: [
+      "Reducción del 65% del tiempo administrativo.",
+      "Disminución de errores contables gracias a la automatización.",
+      "Mayor control de indicadores y mejor experiencia del cliente."
+    ]
+  },
+  {
+    sector: "Salud",
+    dolor: [
+      "Citas agendadas manualmente con retrasos y errores.",
+      "Procesos manuales de revisión diaria consumen tiempo del personal.",
+      "Historial clínico disperso y difícil acceso a información del paciente."
+    ],
+    solucion: [
+      "Automatización de agendas con chatbots y formularios integrados al calendario.",
+      "Flujos automatizados que integran registro y notificaciones.",
+      "Centralización de datos clínicos con búsqueda inteligente y dashboards médicos."
+    ],
+    impacto: [
+      "Reducción del 60% en tiempo administrativo.",
+      "Mayor precisión en la asignación de citas.",
+      "Mejor experiencia del paciente con recordatorios automáticos."
+    ]
+  }
+];
+
+const stack = {
+  sectores: "Finanzas, Retail, Logística, Real Estate, Educación, Entretenimiento, Tecnología",
+  tecnologias: [
+    "OpenAI",
+    "Azure",
+    "AWS",
+    "Tableau",
+    "Power BI",
+    "UiPath",
+    "n8n",
+    "Git",
+    "Google Cloud"
+  ],
+  certificaciones:
+    "Uso de AWS, Azure, GCP y Databricks; estudios en analítica de datos con IA"
+};
+
 export default function App() {
-  const [horasPorDia, setHorasPorDia] = useState(3);
-  const [costePorHora, setCostePorHora] = useState(10);
-  const [numEmpleados, setNumEmpleados] = useState(2);
-
-  const ahorroSemanal = horasPorDia * numEmpleados * costePorHora * 5;
-  const ahorroMensual = ahorroSemanal * 4.33;
-  const ahorroAnual = ahorroMensual * 12;
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-quai-navy via-slate-950 to-slate-950 text-slate-50">
       {/* Barra superior */}
       <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-quai-navy/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <img
-              src="/quai_analytics_logo.png"
-              alt="QuAI Analytics"
-              className="h-9 w-auto"
-            />
+            <img src="/quai_analytics_logo.png" alt="QuAI Analytics" className="h-9 w-auto" />
             <div>
-              <p className="text-sm font-semibold tracking-wide">
-                QuAI Analytics
-              </p>
-              <p className="text-[11px] text-slate-400">
-                Propuesta Digital – El Alandalus
-              </p>
+              <p className="text-sm font-semibold tracking-wide">QuAI Analytics</p>
+              <p className="text-[11px] text-slate-400">Propuesta de Valor</p>
             </div>
           </div>
           <nav className="hidden gap-5 text-xs md:flex">
@@ -61,448 +180,269 @@ export default function App() {
       {/* Hero / Portada */}
       <Section
         id="inicio"
-        eyebrow="Propuesta de Estrategia de Transformación Digital"
-        title="De la entrada manual de datos a decisiones con datos en tiempo real."
-        description="Propuesta digital preparada por QuAI Analytics para El Alandalus, enfocada en conectar su operación diaria con analítica en la nube, dashboards de negocio y automatización con IA."
+
+        title="Transformamos tus datos en decisiones inteligentes."
+        description="Consultora en Panamá que convierte procesos manuales en soluciones de IA, automatización y analítica avanzada para generar resultados rápidos y medibles."
         dark
       >
-        <div className="grid gap-10 md:grid-cols-[3fr,2fr] md:items-center">
-          <div className="space-y-5 text-sm md:text-base text-slate-200">
+        <div className="grid gap-10 md:grid-cols-[2fr,1fr] items-start">
+          <div className="space-y-2 text-sm md:text-base text-slate-200">
             <p>
-              Hoy, gran parte de la información crítica de El Alandalus vive en
-              reportes manuales, digitación en ERP y archivos locales. Eso
-              consume horas de trabajo y retrasa la toma de decisiones.
+              Ayudamos a negocios a transformar datos en decisiones inteligentes con soluciones de Inteligencia
+              Artificial, Automatización y Analítica avanzada.
             </p>
             <p>
-              Nuestra propuesta conecta directamente su ERP con la nube mediante
-              una VPN segura, estructura los datos y despliega dashboards que se
-              actualizan solos, con la opción de automatizar la carga de
-              facturas a través de OCR e IA.
+              Nuestro enfoque: optimizar procesos, reducir ineficiencias y convertir lo manual en flujos inteligentes
+              que produzcan resultados medibles.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <button
-                onClick={() => scrollTo("proximos-pasos")}
+                onClick={() => scrollTo("contacto")}
                 className="rounded-full bg-quai-teal px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-quai-teal/40 hover:bg-quai-teal/90 transition-colors"
               >
-                Contactar a QuAI Analytics
+                Agendar conversación
               </button>
               <button
-                onClick={() => scrollTo("diagnostico")}
+                onClick={() => scrollTo("servicios")}
                 className="rounded-full border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-quai-teal hover:text-quai-teal transition-colors"
               >
-                Ver diagnóstico
+                Ver servicios
               </button>
             </div>
           </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4 md:p-5 shadow-xl">
-            <img
-              src="/alandalus_fachada.jpg"
-              alt="Transformación Digital - El Alandalus"
-              className="h-52 w-full rounded-xl object-cover"
-            />
+          <div className="aspect-square rounded-2xl border border-slate-800 bg-slate-950/70 p-6 shadow-xl">
+            <div className="h-full rounded-xl bg-gradient-to-br from-quai-teal/20 via-slate-900 to-slate-950 p-6 flex flex-col justify-center items-center text-center">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-quai-teal mb-2">Consultoría QuAI</p>
+                <h3 className="text-xl font-semibold text-slate-50 mb-3">IA · Automatización · Analítica</h3>
+                <p className="text-sm text-slate-200">
+                  Transformamos operaciones para que tus equipos se enfoquen en decidir, no en digitar.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* Diagnóstico */}
+      {/* Quiénes somos */}
       <Section
-        id="diagnostico"
-        eyebrow="1 · Diagnóstico"
-        title="Nuestro entendimiento del desafío de El Alandalus."
+        id="quienes-somos"
+        eyebrow="Índice"
+        title="Quiénes somos"
+        description="Consultora que ayuda a negocios a transformar datos en decisiones inteligentes mediante IA, automatización y analítica avanzada."
       >
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-2xl border border-red-900/60 bg-gradient-to-br from-red-950 via-slate-950 to-slate-950 p-6">
-            <h3 className="text-lg font-semibold mb-3">🛑 La situación actual</h3>
-            <ul className="space-y-2 text-sm text-slate-200">
-              <li>
-                • <strong>Ceguera operativa:</strong> reportes dependen de
-                digitación manual en el ERP.
-              </li>
-              <li>
-                • <strong>Tiempo perdido:</strong> el equipo administrativo
-                invierte 2–3 horas diarias transcribiendo facturas.
-              </li>
-              <li>
-                • <strong>Datos aislados:</strong> información clave dispersa en
-                PCs locales y hojas de cálculo.
-              </li>
-            </ul>
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+            <h3 className="text-lg font-semibold mb-3">¿Qué vendemos y hacemos?</h3>
+            <p className="text-sm text-slate-200 mb-3">
+              Soluciones a la medida que resuelven problemas específicos del negocio: no vendemos un portafolio fijo,
+              diseñamos y entregamos proyectos según la necesidad del cliente.
+            </p>
+            <p className="text-sm text-slate-200">
+              En resumen: ahorramos tiempo y dinero automatizando lo repetitivo y analizando tu información para que
+              tomes mejores decisiones.
+            </p>
           </div>
-          <div className="rounded-2xl border border-emerald-900/60 bg-gradient-to-br from-emerald-950 via-slate-950 to-slate-950 p-6">
-            <h3 className="text-lg font-semibold mb-3">✅ Nuestra solución</h3>
+          <div className="rounded-2xl border border-quai-teal/50 bg-slate-950/90 p-6">
+            <h3 className="text-lg font-semibold mb-3">¿Qué es la IA en negocio?</h3>
+            <p className="text-sm text-slate-200 mb-3">
+              La IA aprende de datos, reconoce patrones y actúa automáticamente, como lo haría una persona, pero a escala
+              y sin programar cada paso.
+            </p>
             <ul className="space-y-2 text-sm text-slate-200">
-              <li>
-                • <strong>Conexión segura (VPN):</strong> acceso directo al ERP
-                sin cambiar el software actual.
-              </li>
-              <li>
-                • <strong>Inteligencia (BI):</strong> dashboards que se
-                actualizan automáticamente con ventas y costos.
-              </li>
-              <li>
-                • <strong>Automatización (OCR):</strong> la IA lee facturas y
-                propone asientos para el sistema.
-              </li>
+              <li>• Responde basado en tus datos, no solo en internet.</li>
+              <li>• Puede consultar inventarios, agendar citas o generar reportes.</li>
+              <li>• No es solo consulta: ejecuta tareas y genera acciones.</li>
             </ul>
           </div>
         </div>
       </Section>
 
-      {/* Roadmap */}
+      {/* Misión y visión */}
+      <Section id="mision-vision" eyebrow="Propósito" title="Misión y visión">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+            <h3 className="text-base font-semibold mb-2">Misión</h3>
+            <p className="text-sm text-slate-200">
+              Transformar los datos de nuestros clientes en decisiones inteligentes que impulsen su crecimiento, mediante
+              soluciones de IA y analítica avanzadas.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6">
+            <h3 className="text-base font-semibold mb-2">Visión</h3>
+            <p className="text-sm text-slate-200">
+              Ser el socio estratégico que digitaliza y automatiza los procesos de negocio en la región, generando valor
+              tangible y medible.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* Servicios */}
       <Section
-        id="roadmap"
-        eyebrow="2 · Hoja de ruta"
-        title="La solución propuesta, fase por fase."
-        description="Replicamos la estructura de tu roadmap en Streamlit, pero en formato de narrativa web clara para directivos."
+        id="servicios"
+        eyebrow="Servicios"
+        title="Lo que hacemos"
+        description="Soluciones diseñadas a la medida: consultoría, automatización, IA e integración."
+      >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {servicios.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
+              <h3 className="text-base font-semibold mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-200">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Beneficios */}
+      <Section id="beneficios" eyebrow="Beneficios" title="Valor para tu negocio">
+        <div className="grid gap-3 md:grid-cols-2">
+          {beneficios.map((b) => (
+            <div
+              key={b}
+              className="rounded-xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200"
+            >
+              {b}
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Metodología */}
+      <Section
+        id="metodologia"
+        eyebrow="Metodología"
+        title="Cómo trabajamos"
+        description="Un proceso colaborativo que va de diagnóstico a escalamiento."
+      >
+        <div className="grid gap-4 md:grid-cols-5">
+          {pasosMetodologia.map((step, idx) => (
+            <div key={step.title} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
+              <p className="text-xs font-semibold text-quai-teal mb-1">Paso {idx + 1}</p>
+              <h3 className="text-base font-semibold mb-2">{step.title}</h3>
+              <p className="text-sm text-slate-200">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Entregas de valor */}
+      <Section id="entregas" eyebrow="Entregas de valor" title="Opciones de trabajo">
+        <div className="grid gap-6 md:grid-cols-2">
+          {entregas.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
+              <h3 className="text-base font-semibold mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-200">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Casos reales */}
+      <Section id="casos" eyebrow="Casos reales" title="Posibles casos de uso">
+        <div className="grid gap-6 md:grid-cols-2">
+          {casos.map((caso) => (
+            <div key={caso.sector} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-base font-semibold">Sector {caso.sector}</h3>
+                <span className="text-xs text-quai-teal font-semibold">Caso</span>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-red-900/60 bg-gradient-to-br from-red-950 via-slate-950 to-slate-950 p-6">
+                  <p className="text-sm font-semibold text-slate-100 mb-2">Puntos de dolor</p>
+                  <ul className="text-sm text-slate-200 space-y-1">
+                    {caso.dolor.map((d) => (
+                      <li key={d}>• 😖 {d}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-2xl border border-emerald-900/60 bg-gradient-to-br from-emerald-950 via-slate-950 to-slate-950 p-6">
+                  <p className="text-sm font-semibold text-slate-100 mb-2">Solución</p>
+                  <ul className="text-sm text-slate-200 space-y-1">
+                    {caso.solucion.map((s) => (
+                      <li key={s}>• 🤖 {s}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
+                <p className="text-sm font-semibold text-slate-100">Impacto</p>
+                <ul className="text-sm text-slate-200 space-y-1">
+                  {caso.impacto.map((i) => (
+                    <li key={i}>• 📈 {i}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Experiencia */}
+      <Section
+        id="experiencia"
+        eyebrow="Experiencia"
+        title="Equipo y tecnología"
+        description="Más de 10 años en proyectos de datos e IA en múltiples sectores."
       >
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-            <p className="text-xs font-semibold tracking-wide text-quai-teal uppercase mb-1">
-              Fase 1 · Semana 1
-            </p>
-            <h3 className="text-base font-semibold mb-2">
-              Infraestructura y seguridad
-            </h3>
-            <ul className="text-sm text-slate-200 space-y-1">
-              <li>🔒 Instalación de VPN en la PC de Caja.</li>
-              <li>🛡️ Permisos de solo lectura al ERP.</li>
-              <li>✅ Pruebas de conexión y cifrado de datos.</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-            <p className="text-xs font-semibold tracking-wide text-quai-teal uppercase mb-1">
-              Fase 2 · Semanas 1–2
-            </p>
-            <h3 className="text-base font-semibold mb-2">
-              Limpieza y estructura de datos
-            </h3>
-            <ul className="text-sm text-slate-200 space-y-1">
-              <li>🧹 Limpieza y estandarización de datos.</li>
-              <li>🔗 Modelado entre ventas, costos e inventario.</li>
-              <li>⚙️ Pipelines automáticos (ej. diario o horario).</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-            <p className="text-xs font-semibold tracking-wide text-quai-teal uppercase mb-1">
-              Fase 3 · Semana 3
-            </p>
-            <h3 className="text-base font-semibold mb-2">
-              Despliegue de dashboards
-            </h3>
-            <ul className="text-sm text-slate-200 space-y-1">
-              <li>📊 Dashboard de ventas (hora, mesero, plato).</li>
-              <li>📉 Dashboard de costos y food cost.</li>
-              <li>📱 Acceso móvil para socios.</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-            <p className="text-xs font-semibold tracking-wide text-quai-teal uppercase mb-1">
-              Fase 4 · Semana 4
-            </p>
-            <h3 className="text-base font-semibold mb-2">
-              Integración de IA / OCR
-            </h3>
-            <ul className="text-sm text-slate-200 space-y-1">
-              <li>🤖 Despliegue del módulo OCR.</li>
-              <li>🔄 Conector para proponer asientos contables.</li>
-              <li>🧾 Pruebas de precisión con facturas históricas.</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-            <p className="text-xs font-semibold tracking-wide text-quai-teal uppercase mb-1">
-              Fase 5 · Desde semana 5
-            </p>
-            <h3 className="text-base font-semibold mb-2">
-              Adopción y soporte
-            </h3>
-            <ul className="text-sm text-slate-200 space-y-1">
-              <li>🎓 Entrenamiento al personal.</li>
-              <li>📘 Manual de uso y contingencias.</li>
-              <li>🤝 Soporte post-lanzamiento básico.</li>
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* Por qué nosotros */}
-      <Section
-        id="porque-nosotros"
-        eyebrow="3 · Por qué nosotros"
-        title="No es solo tecnología; es estrategia de datos aplicada al negocio."
-      >
-        <p className="max-w-3xl text-sm md:text-base text-slate-200 mb-8">
-          Tenemos más de 10 años de experiencia trabajando con datos en
-          distintos sectores y acompañando a equipos directivos en la adopción
-          de soluciones analíticas y de IA que agregan valor real al negocio.
-        </p>
-        <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
-            <h3 className="text-base font-semibold mb-1">
-              Ing. Ricardo Alvarez
-            </h3>
-            <p className="text-xs text-quai-teal mb-2">
-              MSc, Científico de Datos
-            </p>
-            <p className="text-sm text-slate-200">
-              Experto en Analítica Avanzada de Datos y Gestión Estratégica de
-              Negocios. Lidera el diseño de la solución, priorización de KPIs y
-              asegura que la implementación responda a los objetivos del negocio.
-            </p>
+            <h3 className="text-base font-semibold mb-2">Sectores</h3>
+            <p className="text-sm text-slate-200">{stack.sectores}</p>
           </div>
           <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
-            <h3 className="text-base font-semibold mb-1">
-              Ing. Alexander Cuadra
-            </h3>
-            <p className="text-xs text-quai-teal mb-2">
-              MBA, MS, Ingeniero de Datos
-            </p>
-            <p className="text-sm text-slate-200">
-              Especialista en Analítica e Ingeniería de Datos. Se enfoca en la
-              conexión con el ERP, la calidad de los datos y la robustez de la
-              infraestructura en la nube.
-            </p>
+            <h3 className="text-base font-semibold mb-2">Tecnologías</h3>
+            <p className="text-sm text-slate-200">{stack.tecnologias.join(", ")}</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
+            <h3 className="text-base font-semibold mb-2">Certificaciones</h3>
+            <p className="text-sm text-slate-200">{stack.certificaciones}</p>
           </div>
         </div>
       </Section>
 
-      {/* ROI e inversión */}
+      {/* Demo interactiva */}
       <Section
-        id="roi"
-        eyebrow="4 · Inversión y retorno"
-        title="Calculadora de ahorro e inversión para El Alandalus."
+        id="demo"
+        eyebrow="Demo interactiva"
+        title="Predicción de precios en tiempo real"
+        description="Ejemplo de cómo la IA puede automatizar valuaciones de propiedades con datos reales del mercado panameño."
       >
-        <div className="grid gap-10 md:grid-cols-[2fr,3fr] md:items-start">
-          <div className="space-y-4 text-sm text-slate-200">
-            <p>
-              La solución está diseñada para liberar tiempo del equipo y reducir
-              errores manuales. La calculadora permite estimar el impacto
-              económico anual de automatizar la digitación y los reportes.
-            </p>
-            <p>
-              Ajusta las horas diarias ahorradas, el coste por hora y el número
-              de personas involucradas para ver cómo se comporta el ahorro
-              estimado.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 text-sm">
-            <h3 className="text-base font-semibold mb-4">
-              Calculadora de ROI interactiva
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <div className="flex items-center justify-between text-xs mb-1">
-                  <span>Horas diarias ahorradas</span>
-                  <span className="font-semibold text-quai-teal">
-                    {horasPorDia.toFixed(1)} h/día
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min={0.5}
-                  max={8}
-                  step={0.5}
-                  value={horasPorDia}
-                  onChange={(e) => setHorasPorDia(Number(e.target.value))}
-                  className="w-full accent-quai-teal"
-                />
-              </div>
-              <div>
-                <div className="flex items-center justify-between text-xs mb-1">
-                  <span>Coste promedio por hora (USD)</span>
-                  <span className="font-semibold text-quai-teal">
-                    ${costePorHora.toFixed(0)}
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min={1}
-                  max={20}
-                  step={1}
-                  value={costePorHora}
-                  onChange={(e) => setCostePorHora(Number(e.target.value))}
-                  className="w-full accent-quai-teal"
-                />
-              </div>
-              <div>
-                <div className="flex items-center justify-between text-xs mb-1">
-                  <span>Número de empleados involucrados</span>
-                  <span className="font-semibold text-quai-teal">
-                    {numEmpleados}
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min={1}
-                  max={10}
-                  step={1}
-                  value={numEmpleados}
-                  onChange={(e) => setNumEmpleados(Number(e.target.value))}
-                  className="w-full accent-quai-teal"
-                />
-              </div>
-              <div className="mt-2 space-y-1 text-slate-200">
-                <p>
-                  • Ahorro semanal estimado:{" "}
-                  <span className="font-semibold">
-                    $
-                    {ahorroSemanal.toLocaleString(undefined, {
-                      maximumFractionDigits: 0
-                    })}
-                  </span>
-                </p>
-                <p>
-                  • Ahorro mensual (4.33 semanas):{" "}
-                  <span className="font-semibold">
-                    $
-                    {ahorroMensual.toLocaleString(undefined, {
-                      maximumFractionDigits: 0
-                    })}
-                  </span>
-                </p>
-                <p>
-                  • Ahorro anual estimado:{" "}
-                  <span className="font-semibold text-quai-teal">
-                    $
-                    {ahorroAnual.toLocaleString(undefined, {
-                      maximumFractionDigits: 0
-                    })}
-                  </span>
-                </p>
-              </div>
-              <p className="mt-2 text-[11px] text-slate-400">
-                Este cálculo está inspirado en la lógica de tu app de
-                Streamlit. En la reunión ajustaremos los valores a la realidad
-                de El Alandalus para construir el caso de negocio final.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Paquetes de inversión */}
-        <div className="mt-14">
-          <h3 className="text-lg font-semibold mb-4">Inversión y alcance</h3>
-          <p className="text-sm text-slate-200 mb-6">
-            Para El Alandalus, hemos diseñado dos rutas principales de
-            implementación y un plan de mantenimiento. Recomendamos el{" "}
-            <span className="font-semibold">Plan B: Automatización Completa</span>{" "}
-            para maximizar el ahorro de horas hombre.
-          </p>
-          <div className="grid gap-6 md:grid-cols-3">
-            {/* Plan A */}
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
-              <p className="text-xs font-semibold text-slate-400 mb-1">
-                📍 Plan A
-              </p>
-              <h4 className="text-base font-semibold mb-2">
-                Control y Visibilidad
-              </h4>
-              <p className="text-xs text-slate-300 mb-3">
-                Ideal si la prioridad inmediata es ver qué pasa en el negocio,
-                aunque la digitación de facturas siga siendo manual.
-              </p>
-              <ul className="text-sm text-slate-200 space-y-1 mb-4">
-                <li>✅ Infraestructura: instalación de VPN segura.</li>
-                <li>✅ Ingeniería de datos: conexión y limpieza del ERP.</li>
-                <li>✅ Dashboards BI: ventas, costos y análisis de menú.</li>
-                <li>❌ No incluye módulo de escaneo de facturas (OCR).</li>
-              </ul>
-              <p className="text-sm font-semibold">Inversión única: $1,500</p>
-              <p className="text-[11px] text-slate-400">
-                Tiempo de entrega estimado: 3 semanas.
-              </p>
-            </div>
-
-            {/* Plan B (recomendado) */}
-            <div className="rounded-2xl border border-quai-teal/60 bg-slate-950/90 p-5">
-              <p className="text-xs font-semibold text-quai-teal mb-1">
-                🚀 Plan B (Recomendado)
-              </p>
-              <h4 className="text-base font-semibold mb-2">
-                Automatización (BI + OCR)
-              </h4>
-              <p className="text-xs text-slate-300 mb-3">
-                La solución completa: elimina la ceguera operativa y también la
-                digitación manual.
-              </p>
-              <ul className="text-sm text-slate-200 space-y-1 mb-4">
-                <li>✨ Todo lo incluido en el Plan A.</li>
-                <li>✅ App de OCR para lectura automática de facturas.</li>
-                <li>
-                  ✅ Automatización de inyección de datos (Proveedor, ITBMS,
-                  totales).
-                </li>
-                <li>✅ Capacitación al personal administrativo.</li>
-                <li>✅ Soporte de lanzamiento (1 mes de monitoreo intensivo).</li>
-              </ul>
-              <p className="text-sm font-semibold">Inversión única: $2,500</p>
-              <p className="text-[11px] text-slate-400">
-                Tiempo de entrega estimado: 5–6 semanas. 🎯 Ahorro estimado:
-                60–80 horas/mes.
-              </p>
-            </div>
-
-            {/* Mantenimiento mensual */}
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
-              <p className="text-xs font-semibold text-slate-400 mb-1">
-                🛠️ Mantenimiento mensual
-              </p>
-              <h4 className="text-base font-semibold mb-2">
-                Soporte y evolución continua
-              </h4>
-              <p className="text-xs text-slate-300 mb-3">
-                Asegura que todo siga funcionando 24/7 y que el sistema evolucione
-                con el negocio.
-              </p>
-              <ul className="text-sm text-slate-200 space-y-1 mb-4">
-                <li>☁️ Hosting y costos de infraestructura en la nube.</li>
-                <li>🔒 Monitoreo de la VPN y conectividad.</li>
-                <li>🐛 Soporte técnico y corrección de errores.</li>
-                <li>🔄 Actualizaciones menores de reportes y dashboards.</li>
-              </ul>
-              <p className="text-sm font-semibold">Fee mensual sugerido: $100</p>
-              <p className="text-[11px] text-slate-400">
-                Comienza una vez entregada la solución final.
-              </p>
-            </div>
-          </div>
-        </div>
+        <PropertyPricePredictor />
       </Section>
 
-      {/* Próximos pasos */}
+      {/* Contacto */}
       <Section
-        id="proximos-pasos"
-        eyebrow="5 · Próximos pasos"
-        title="Cómo avanzar desde aquí."
-        description="El siguiente paso es una reunión de 30 minutos para revisar esta propuesta, ajustar el alcance y definir una fecha de inicio tentativa."
+        id="contacto"
+        eyebrow="Contacto"
+        title="¿Listo para hablar?"
+        description="Agenda 30 minutos para revisar necesidades, priorizar casos de uso y planificar un piloto."
         dark
       >
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+        <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-3 text-sm text-slate-200">
-            <p>En esa conversación podemos:</p>
-            <ul className="space-y-2">
-              <li>• Validar alcance técnico (ERP, VPN, usuarios, permisos).</li>
-              <li>• Priorizar dashboards y vistas que más valoren los socios.</li>
-              <li>
-                • Alinear inversión, tiempos de entrega y soporte post-lanzamiento.
-              </li>
-            </ul>
             <p>
-              Si ambas partes ven encaje, avanzamos a formalizar el acuerdo y
-              calendarizar la Fase 1.
+              Escríbenos para explorar cómo aplicar IA, automatización y analítica avanzada en tu negocio. Podemos
+              mostrarte una demo rápida y acordar los primeros pasos.
             </p>
+            <p className="text-slate-300">info@quaianalytics.com · (+507) 6820-1544</p>
+            <p className="text-[11px] text-slate-400">© {new Date().getFullYear()} QuAI Analytics. Presentación QuAI V2.</p>
           </div>
-          <div className="rounded-2xl border border-quai-teal/50 bg-slate-950/90 p-5 text-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-quai-teal mb-2">
-              Contacto
-            </p>
-            <p className="text-slate-100 font-semibold mb-1">
-              QuAI Analytics
-            </p>
-            <p className="text-slate-300 mb-2">
-              info@quaianalytics.com · (+507) 6820‑1544
-            </p>
+          <div className="rounded-2xl border border-quai-teal/60 bg-slate-950/90 p-5 text-sm space-y-3">
+            <p className="text-xs uppercase tracking-wide text-quai-teal font-semibold">Equipo</p>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex-1 min-w-[140px] space-y-1">
+                <p className="text-slate-100 font-semibold">Ricardo Alvarez</p>
+                <p className="text-slate-300 text-xs">Científico de Datos</p>
+              </div>
+              <div className="flex-1 min-w-[140px] space-y-1">
+                <p className="text-slate-100 font-semibold">Alexander Cuadra</p>
+                <p className="text-slate-300 text-xs">Ingeniero de Datos</p>
+              </div>
+            </div>
             <a
-              href="https://wa.me/50768201544?text=Hola,%20me%20interesa%20la%20propuesta%20digital%20para%20El%20Alandalus.%20¿Podemos%20agendar%20una%20reunión%20de%2030%20minutos?"
+              href="https://wa.me/50768201544?text=Hola,%20me%20interesa%20explorar%20una%20soluci%C3%B3n%20con%20QuAI%20Analytics.%20%F0%9F%92%AC"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full rounded-full bg-quai-teal px-4 py-2.5 text-center text-sm font-semibold text-slate-950 shadow-lg shadow-quai-teal/40 hover:bg-quai-teal/90 transition-colors"
@@ -511,10 +451,6 @@ export default function App() {
             </a>
           </div>
         </div>
-        <p className="mt-8 text-[11px] text-slate-500">
-          © {new Date().getFullYear()} QuAI Analytics. Propuesta confidencial,
-          preparada exclusivamente para El Alandalus.
-        </p>
       </Section>
     </div>
   );
