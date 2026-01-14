@@ -252,12 +252,7 @@ const demosPorCategoria = {
   ]
 };
 
-const metricas = [
-  { numero: "40%", texto: "Reducción en costos operativos", icon: Icons.BarChart },
-  { numero: "3-6", texto: "Meses para ver ROI", icon: Icons.Zap },
-  { numero: "24/7", texto: "Soporte y monitoreo", icon: Icons.Shield },
-  { numero: "100+", texto: "Proyectos entregados", icon: Icons.Check }
-];
+
 
 const sectores = ["Energía", "Salud", "Finanzas", "Retail", "Logística"];
 const tecnologias = ["Python", "Azure", "OpenAI", "Power BI", "UiPath", "SAP"];
@@ -291,19 +286,7 @@ export function HomePage() {
         </div>
       </Section>
 
-      {/* Métricas */}
-      <section className="py-12 border-y border-slate-800/50">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {metricas.map((m, i) => (
-              <div key={i} className="text-center space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-quai-teal">{m.numero}</div>
-                <div className="text-sm text-slate-400">{m.texto}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Quiénes somos */}
       <Section id="quienes-somos" title="Quiénes somos">
