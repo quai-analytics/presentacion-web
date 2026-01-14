@@ -79,7 +79,7 @@ export function CalendarAssistant({ webhookUrl, calendarIframeUrl }: CalendarAss
         {/* Columna del Chat */}
         <div className="rounded-2xl border border-slate-800 bg-slate-950/50 overflow-hidden">
           <div className="border-b border-slate-800 px-6 py-4 bg-slate-900/50">
-            <h3 className="text-lg font-semibold text-slate-50">💬 Asistente Personal</h3>
+            <h3 className="text-lg font-semibold text-slate-50">Asistente Personal</h3>
           </div>
 
           {/* Chat messages area */}
@@ -151,7 +151,7 @@ export function CalendarAssistant({ webhookUrl, calendarIframeUrl }: CalendarAss
         {/* Columna del Calendario */}
         <div className="rounded-2xl border border-slate-800 bg-slate-950/50 overflow-hidden">
           <div className="border-b border-slate-800 px-6 py-4 bg-slate-900/50 flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-slate-50">🗓️ Tu Calendario de Citas</h3>
+            <h3 className="text-lg font-semibold text-slate-50">Tu Calendario de Citas</h3>
             <button
               onClick={refreshCalendar}
               className="rounded-full bg-slate-800 border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-700 hover:text-quai-teal transition-colors"
@@ -174,7 +174,7 @@ export function CalendarAssistant({ webhookUrl, calendarIframeUrl }: CalendarAss
       {/* Info */}
       <div className="mt-6 rounded-xl border border-slate-800 bg-slate-900/30 p-4">
         <p className="text-sm text-slate-400 leading-relaxed">
-          <span className="text-quai-teal font-semibold">ℹ️ Información:</span> Este asistente inteligente se conecta con Google Calendar para ayudarte a gestionar tus citas con facilidad. 
+          <span className="text-quai-teal font-semibold">Información:</span> Este asistente inteligente se conecta con Google Calendar para ayudarte a gestionar tus citas con facilidad. 
           Conversa con él para crear, agendar, modificar o eliminar eventos usando lenguaje natural.
         </p>
         <p className="text-xs text-slate-500 mt-2">Session ID: {sessionId.slice(0, 8)}...</p>

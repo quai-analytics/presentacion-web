@@ -6,7 +6,6 @@ const demos = [
     id: "property-price",
     title: "Predicción de Precios",
     description: "Modelo de ML para estimar precios de propiedades inmobiliarias en tiempo real",
-    icon: "🏠",
     path: "/demo/property-price",
     tags: ["Machine Learning", "Real Estate", "Predicción"]
   },
@@ -14,7 +13,6 @@ const demos = [
     id: "chatbot",
     title: "Asistente Virtual IA",
     description: "Chatbot inteligente con procesamiento de lenguaje natural para atención al cliente",
-    icon: "💬",
     path: "/demo/chatbot",
     tags: ["NLP", "Chatbot", "Automatización"]
   },
@@ -22,7 +20,6 @@ const demos = [
     id: "calendar-assistant",
     title: "Asistente de Calendario",
     description: "Gestión inteligente de citas y eventos con integración a Google Calendar",
-    icon: "🗓️",
     path: "/demo/calendar-assistant",
     tags: ["IA", "Automatización", "Productividad"]
   },
@@ -30,7 +27,6 @@ const demos = [
     id: "customer-clustering",
     title: "Segmentación de Clientes",
     description: "Análisis RFM y clustering con K-Means para identificar segmentos de clientes",
-    icon: "📊",
     path: "/demo/customer-clustering",
     tags: ["Machine Learning", "Marketing", "CRM"]
   }
@@ -69,7 +65,6 @@ export function DemoPage() {
               className="group rounded-2xl border border-slate-800 bg-slate-950/50 p-8 hover:border-quai-teal/50 hover:bg-slate-900/50 transition-all cursor-pointer"
             >
               <div className="space-y-4">
-                <div className="text-5xl">{demo.icon}</div>
                 <h3 className="text-2xl font-semibold text-slate-50 group-hover:text-quai-teal transition-colors">
                   {demo.title}
                 </h3>
@@ -100,7 +95,7 @@ export function DemoPage() {
       <Section id="coming-soon" title="Próximamente">
         <div className="max-w-4xl mx-auto">
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-8 text-center">
-            <p className="text-slate-400 mb-4">🚀 Estamos trabajando en más demos interactivas</p>
+            <p className="text-slate-400 mb-4">Estamos trabajando en más demos interactivas</p>
             <div className="flex flex-wrap gap-3 justify-center text-sm text-slate-500">
               <span className="px-3 py-1 rounded-full bg-slate-900 border border-slate-800">Análisis de Sentimientos</span>
               <span className="px-3 py-1 rounded-full bg-slate-900 border border-slate-800">OCR Inteligente</span>
@@ -126,7 +121,7 @@ export function DemoPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-green-700 transition-colors"
             >
-              <span>💬</span>
+              <span>→</span>
               Agenda una consultoría gratuita
             </a>
           </div>

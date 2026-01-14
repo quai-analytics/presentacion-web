@@ -45,7 +45,7 @@ export function CalendarDemoPage() {
         ) : (
           <div className="max-w-4xl mx-auto text-center">
             <div className="rounded-2xl border border-yellow-800/50 bg-yellow-950/20 p-8">
-              <p className="text-yellow-400 text-lg mb-2">⚠️ Configuración pendiente</p>
+              <p className="text-yellow-400 text-lg mb-2">Configuración pendiente</p>
               <p className="text-slate-300 mb-4">
                 Para activar el asistente de calendario, configura las variables de entorno:
               </p>
@@ -71,7 +71,7 @@ export function CalendarDemoPage() {
           </div>
 
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-3">📊 Aplicaciones</h3>
+            <h3 className="text-lg font-semibold text-quai-teal mb-3">Aplicaciones</h3>
             <ul className="space-y-2 text-slate-300">
               <li className="flex items-start gap-3">
                 <span className="text-quai-teal text-xl mt-0.5">✓</span>
@@ -115,7 +115,7 @@ export function CalendarDemoPage() {
           </div>
 
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-3">🚀 ¿Quieres tu propio asistente?</h3>
+            <h3 className="text-lg font-semibold text-quai-teal mb-3">¿Quieres tu propio asistente?</h3>
             <p className="text-slate-300 leading-relaxed mb-4">
               Podemos crear un asistente personalizado integrado con tus sistemas (Google Workspace, Microsoft 365, CRMs)
               y adaptado a tus procesos específicos de negocio. Contáctanos para una consultoría gratuita.

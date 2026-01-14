@@ -49,7 +49,7 @@ export function CustomerClusteringDemoPage() {
           </div>
 
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-3">📊 Aplicaciones</h3>
+            <h3 className="text-lg font-semibold text-quai-teal mb-3">Aplicaciones</h3>
             <ul className="space-y-2 text-slate-300">
               <li className="flex items-start gap-3">
                 <span className="text-quai-teal text-xl mt-0.5">✓</span>
@@ -93,7 +93,7 @@ export function CustomerClusteringDemoPage() {
           </div>
 
           <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-            <h3 className="text-lg font-semibold text-quai-teal mb-3">🚀 ¿Quieres segmentar tus clientes?</h3>
+            <h3 className="text-lg font-semibold text-quai-teal mb-3">¿Quieres segmentar tus clientes?</h3>
             <p className="text-slate-300 leading-relaxed mb-4">
               Podemos implementar un sistema de segmentación de clientes conectado a tu CRM o base de datos,
               con dashboards automatizados y recomendaciones accionables. Contáctanos para una consultoría gratuita.

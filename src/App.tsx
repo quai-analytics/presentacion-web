@@ -13,6 +13,7 @@ const navItems = [
   { id: "metodologia", label: "Metodología" },
   { id: "entregas", label: "Entregas" },
   { id: "casos", label: "Casos" },
+  { id: "demos", label: "Demos" },
   { id: "experiencia", label: "Experiencia" }
 ];
 
@@ -47,12 +48,6 @@ function Navigation() {
                   {item.label}
                 </button>
               ))}
-              <Link
-                to="/demo"
-                className="rounded-full bg-quai-teal px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-quai-teal/90 transition-colors"
-              >
-                Demo
-              </Link>
             </>
           ) : (
             <>
@@ -61,12 +56,6 @@ function Navigation() {
                 className="text-slate-300 hover:text-quai-teal transition-colors"
               >
                 Inicio
-              </Link>
-              <Link
-                to="/demo"
-                className="text-slate-300 hover:text-quai-teal transition-colors"
-              >
-                Demo
               </Link>
             </>
           )}

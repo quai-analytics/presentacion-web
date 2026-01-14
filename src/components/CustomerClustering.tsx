@@ -113,7 +113,7 @@ export function CustomerClustering() {
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Controles */}
       <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
-        <h3 className="text-lg font-semibold text-quai-teal mb-4">⚙️ Configuración del Análisis</h3>
+        <h3 className="text-lg font-semibold text-quai-teal mb-4">Configuración del Análisis</h3>
         <div className="grid md:grid-cols-3 gap-6">
           <div>
             <label className="block text-sm text-slate-300 mb-2">
