@@ -284,17 +284,6 @@ export function HomePage() {
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
               QuAI Analytics impulsa tu negocio con IA, automatización y datos en tiempo real.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="https://wa.me/50768201544"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-green-700 transition-colors"
-              >
-                <span>→</span>
-                Agenda una reunión por WhatsApp
-              </a>
-            </div>
           </div>
           <div className="flex items-center justify-center">
             <img src="/image_2.png" alt="QuAI Analytics" className="w-full max-w-md rounded-2xl shadow-2xl" />
