@@ -128,6 +128,22 @@ const casos = [
       { text: "Automatización OCR: IA lee facturas y propone asientos contables" }
     ],
     impacto: "Automatización de 2-3 horas diarias + visibilidad operativa completa"
+  },
+  {
+    sector: "Empresa de servicios / comercial",
+    dolor: [
+      { text: "Información de clientes dispersa en Excel, correos y WhatsApp, sin un registro centralizado" },
+      { text: "Falta de visibilidad del estado de los leads, oportunidades y ventas en curso" },
+      { text: "Seguimiento manual e inconsistente, provocando pérdidas de oportunidades comerciales" },
+      { text: "Dificultad para medir el desempeño del equipo de ventas y la efectividad de los canales de captación" }
+    ],
+    solucion: [
+      { text: "Implementación de un CRM centralizado para la gestión integral de clientes y leads" },
+      { text: "Automatización del seguimiento comercial con recordatorios, tareas y embudos de ventas definidos" },
+      { text: "Dashboards en tiempo real para visualizar leads, conversiones, pipeline y métricas clave" },
+      { text: "Integración del CRM con formularios web, correo y WhatsApp para capturar leads automáticamente" }
+    ],
+    impacto: "Incremento en la tasa de conversión de leads + visibilidad total del pipeline comercial + mejora en la experiencia del cliente"
   }
 ];
 
@@ -438,7 +454,7 @@ export function HomePage() {
             <div key={i} className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/50 to-slate-950/80 p-8 hover:border-quai-teal/30 transition-all">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-quai-teal/20 flex items-center justify-center border border-quai-teal/50 text-white">
-                  {i === 0 ? <Icons.Zap className="w-6 h-6" /> : i === 1 ? <Icons.Plus className="w-6 h-6" /> : <Icons.Tomato className="w-6 h-6" />}
+                  {i === 0 ? <Icons.Zap className="w-6 h-6" /> : i === 1 ? <Icons.Plus className="w-6 h-6" /> : i === 2 ? <Icons.Tomato className="w-6 h-6" /> : <Icons.BarChart className="w-6 h-6" />}
                 </div>
                 <h3 className="text-2xl font-bold text-slate-50">{c.sector}</h3>
               </div>
